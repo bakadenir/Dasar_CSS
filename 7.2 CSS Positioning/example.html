@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Position CSS</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        line-height: 1.6;
+      }
+
+      .container {
+        margin: 40px;
+        height: 2000px; /* biar bisa discroll */
+      }
+
+      .box {
+        width: 150px;
+        height: 80px;
+        margin-bottom: 30px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      /* 1. Static (default) */
+      .static {
+        background: gray;
+        position: static; /* default sebenarnya tidak perlu ditulis */
+      }
+
+      /* 2. Relative */
+      .relative {
+        background: teal;
+        position: relative;
+        top: 20px; /* geser ke bawah 20px */
+        left: 30px; /* geser ke kanan 30px */
+      }
+
+      /* 3. Absolute */
+      .parent {
+        position: relative; /* jadi acuan untuk child absolute */
+        background: lightyellow;
+        padding: 50px;
+        margin-bottom: 40px;
+        border: 2px dashed orange;
+        height: 200px;
+      }
+      .absolute {
+        background: crimson;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      /* 4. Fixed */
+      .fixed {
+        background: purple;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      /* 5. Sticky */
+      .sticky {
+        background: green;
+        position: sticky;
+        top: 0; /* akan lengket di atas saat discroll */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box static">Static</div>
+
+      <div class="box relative">Relative</div>
+
+      <div class="parent">
+        Parent (Relative)
+        <div class="box absolute">Absolute</div>
+      </div>
+
+      <div class="box sticky">Sticky</div>
+
+      <p>Scroll ke bawah untuk melihat efek sticky dan fixed...</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel urna
+        at odio sollicitudin...
+      </p>
+      <p>
+        Aliquam erat volutpat. Phasellus dignissim ligula id risus pretium, eu
+        porta nibh pulvinar...
+      </p>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque...
+      </p>
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium...
+      </p>
+    </div>
+
+    <div class="box fixed">Fixed</div>
+  </body>
+</html>
